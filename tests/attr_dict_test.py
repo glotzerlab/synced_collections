@@ -5,7 +5,7 @@
 
 import pytest
 
-from signac.errors import InvalidKeyError, KeyTypeError
+from synced_collections.errors import InvalidKeyError, KeyTypeError
 
 
 class AttrDictTest:

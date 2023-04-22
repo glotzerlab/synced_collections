@@ -8,7 +8,7 @@ import pytest
 from attr_dict_test import AttrDictTest, AttrListTest
 from synced_collection_test import SyncedDictTest, SyncedListTest
 
-from signac._synced_collections.backends.collection_json import (
+from synced_collections.backends.collection_json import (
     ON_WINDOWS,
     JSONAttrDict,
     JSONAttrList,

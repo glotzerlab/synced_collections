@@ -7,7 +7,7 @@ import uuid
 import pytest
 from synced_collection_test import SyncedDictTest, SyncedListTest
 
-from signac._synced_collections.backends.collection_redis import RedisDict, RedisList
+from synced_collections.backends.collection_redis import RedisDict, RedisList
 
 try:
     import redis

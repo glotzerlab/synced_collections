@@ -12,7 +12,7 @@ import pytest
 from attr_dict_test import AttrDictTest, AttrListTest
 from test_json_collection import JSONCollectionTest, TestJSONDict, TestJSONList
 
-from signac._synced_collections.backends.collection_json import (
+from synced_collections.backends.collection_json import (
     BufferedJSONAttrDict,
     BufferedJSONAttrList,
     BufferedJSONDict,
@@ -22,7 +22,7 @@ from signac._synced_collections.backends.collection_json import (
     MemoryBufferedJSONDict,
     MemoryBufferedJSONList,
 )
-from signac._synced_collections.errors import BufferedError, MetadataError
+from synced_collections.errors import BufferedError, MetadataError
 
 ON_WINDOWS = sys.platform.startswith("win32") or sys.platform.startswith("cygwin")
 
