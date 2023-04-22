@@ -9,8 +9,8 @@ from typing import Any, Tuple, Type
 import pytest
 
 from synced_collections import SyncedCollection
-from synced_collections.numpy_utils import NumpyConversionWarning
 from synced_collections.errors import KeyTypeError
+from synced_collections.numpy_utils import NumpyConversionWarning
 
 PYPY = "PyPy" in platform.python_implementation()
 

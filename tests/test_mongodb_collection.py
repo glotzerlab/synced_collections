@@ -4,10 +4,7 @@
 import pytest
 from synced_collection_test import SyncedDictTest, SyncedListTest
 
-from synced_collections.backends.collection_mongodb import (
-    MongoDBDict,
-    MongoDBList,
-)
+from synced_collections.backends.collection_mongodb import MongoDBDict, MongoDBList
 
 try:
     import pymongo
