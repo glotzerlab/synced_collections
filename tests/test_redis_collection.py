@@ -17,7 +17,7 @@ try:
         redis_client = redis.Redis()
         test_key = str(uuid.uuid4())
         redis_client.set(test_key, 0)
-        if redis_client.get(test_key) == b"0":  # Redis stores data as bytes
+        if redis_client.get(test_key) != b"0":  # Redis stores data as bytes
             raise RuntimeError("Cache access check failed.")
         redis_client.delete(test_key)
         REDIS = True
