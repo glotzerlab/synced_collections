@@ -1,0 +1,16 @@
+=========
+Changelog
+=========
+
+The **synced_collections** package follows `semantic versioning <https://semver.org/>`_.
+
+Version 0
+=========
+
+[0.0.0] -- XXXX-XX-XX
+---------------------
+
+Added
++++++
+
+- Separate package contents out from signac.
