@@ -7,10 +7,11 @@
 [![Twitter](https://img.shields.io/twitter/follow/signacdata?style=social)](https://twitter.com/signacdata)
 [![GitHub Stars](https://img.shields.io/github/stars/glotzerlab/synced_collections?style=social)](https://github.com/glotzerlab/synced_collections/)
 
-The `synced_collections` package provides a convenient set of Pythonic abstractions to make it easier to work with arbitrary underlying data stores.
-The package provides standardized implementations of built-in Python collections like dicts that can be plugged into different backends.
-For instance, users wishing to access a JSON file on disk like a dictionary and automatically persist all changes could use the `synced_collections.JSONDict`.
+The [**signac** framework](https://signac.io) helps users manage and scale file-based workflows, facilitating data reuse, sharing, and reproducibility.
 
+The **synced_collections** package provides Pythonic abstractions over various underlying data stores, presenting APIs that behave like standard built-in Python collections like dicts.
+**synced_collections** form the backbone of **signac**'s data and metadata storage, but may be used just as easily outside of **signac**.
+For instance, users wishing to access a JSON file on disk like a dictionary and automatically persist all changes could use the `synced_collections.JSONDict`.
 
 ## Resources
 
