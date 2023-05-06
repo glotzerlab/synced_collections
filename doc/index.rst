@@ -22,6 +22,7 @@ Contents
 
    installation
    tutorial
+   library_design
    api
    changes
    support
