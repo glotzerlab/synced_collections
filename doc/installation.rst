@@ -10,7 +10,7 @@ Some features or backends are not supported by the standard library and require 
 Source Code Installation
 ========================
 
-Alternatively you can clone the `git repository <https://github.com/glotzerlab/synced_collections>`_ and pip install it directly (Option 1), or install directly from git (Option 2).
+You can clone the `git repository <https://github.com/glotzerlab/synced_collections>`_ and pip install it directly (Option 1), or install directly from git (Option 2).
 
 .. code:: bash
 
@@ -39,9 +39,12 @@ Extra features with dependencies:
 
     Support for storing numpy arrays as synced lists
       required: ``numpy``
+
     Zarr backend
       required: ``zarr``
+
     Redis backend
       required: ``redis``
+
     MongoDB backend
       required: ``pymongo``
