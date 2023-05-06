@@ -37,9 +37,6 @@ Extra features with dependencies:
 
 .. glossary::
 
-    Support for storing numpy arrays as synced lists
-      required: ``numpy``
-
     Zarr backend
       required: ``zarr``
 
@@ -48,3 +45,6 @@ Extra features with dependencies:
 
     MongoDB backend
       required: ``pymongo``
+
+Note that if numpy arrays are stored into a :class:`SyncedCollection` they will be converted into a suitable subclass of :class:`SyncedList`.
+No numpy extra installation feature is provided, however, since it is assumed that users wishing to store numpy arrays will already have numpy installed.
