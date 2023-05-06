@@ -1,5 +1,7 @@
 .. _library_design:
 
+.. currentmodule:: synced_collections
+
 ==============
 Library Design
 ==============
@@ -89,20 +91,22 @@ The reason to support both of these is that in some instances a class may not wi
 Overriding ``_all_validators`` provides a way for a class to control only itself without modifying the rest of the hierarchy.
 Attempting to use a more hierarchical approach where ``_all_validators`` was also inherited but given higher precedence than ``_validators`` would lead to much more complex resolution orders for validators.
 
-When a  :class:`SyncedCollection` subclass is initialized (note that this is at *class* definition time, not when instances are created), its :meth:`_register_validators` method will be called.
+When a  :class:`SyncedCollection` subclass is initialized (note that this is at *class* definition time, not when instances are created), its ``_register_validators`` method will be called.
 If this class defines an ``_all_validators`` attribute, this set of validators will be used by all instances of this class.
-Otherwise, :meth:`_register_validators` will traverse the MRO and collect the ``_validators`` attributes from all parents of a class, and store these in the ``_all_validators`` attribute for the class.
+Otherwise, ``_register_validators`` will traverse the MRO and collect the ``_validators`` attributes from all parents of a class, and store these in the ``_all_validators`` attribute for the class.
 
 Buffering
 =========
 
+.. currentmodule:: synced_collections.buffers.buffered_collection
+
 Since keeping the data backend synchronized can be expensive, in many cases it may be beneficial to buffer reads and writes.
 The buffering protocol is defined by the :class:`BufferedCollection`.
-This subclass of :class:`SyncedCollection` defines the standard interface for classes that support buffering.
+This class defines the standard interface for classes that support buffering.
 This interface consists of the following:
 
-    - ``_load_from_buffer``: Loads data while in buffered mode and returns it in an object satisfying :meth:`synced_collections.SyncedCollection.is_base_type`. The default behavior is to simply call :meth:`synced_collections.SyncedCollection._load_from_resource`.
-    - ``_save_to_buffer``: Stores data while in buffered mode. The default behavior is to simply call :meth:`synced_collections.SyncedCollection._save_to_resource``.
+    - ``_load_from_buffer``: Loads data while in buffered mode and returns it in an object satisfying :meth:`synced_collections.SyncedCollection.is_base_type`. The default behavior is to simply call ``_load_from_resource``
+    - ``_save_to_buffer``: Stores data while in buffered mode. The default behavior is to simply call ``._save_to_resource``.
     - ``buffered``: A context manager within which all reads and writes to a collection are buffered.
     - ``buffer_backend``: A class-level context manager that may be used to buffer reads and writes for all instances of that class.
 
