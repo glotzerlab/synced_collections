@@ -8,7 +8,7 @@ Library Design
 
 **synced_collections** is designed around a clear separation of concerns between the two primary aspects of such collections: 1) handling synchronization with a particular backend, and 2) matching the API of a particular type of Python collection.
 For the first, a given collection must define how data should be stored to or loaded from data stored in the backend.
-The second typically requires matching the expected API of one of the ABCs defined by `the Python standard library <https://docs.python.org/3/library/collections.abc.html>`__.
+The second typically requires matching the expected API of one of the Abstract Base Classes (ABCs) defined by `the Python standard library <https://docs.python.org/3/library/collections.abc.html>`__.
 Additionally, it requires a clear approach to handle the recursive traversal of a nested data structure to ensure that all nested collections are also of the appropriate type to ensure proper synchronization.
 
 These central concepts are expressed via the abstract API defined by the :class:`SyncedCollection` class.
@@ -67,9 +67,9 @@ This idea is best illustrated using an example, such as the one below:
 In addition, the class defines the following two concrete methods:
 
     - ``_load``: Loads data from the backend, accounting for nesting (i.e. ensuring that only the top-level collection is responsible for loading) before calling ``_load_from_resource``. This method should be called before any read (or read/write) operation on a collection.
-    - ``_save``: Stores data to the backend, accounting for nesting (i.e. ensuring that only the top-level collection is responsible for storing) before calling ``_store_to_resource``. This method should be called after any write operation on a collection.
+    - ``_save``: Stores data to the backend, accounting for nesting (i.e. ensuring that only the top-level collection is responsible for storing) before calling ``_save_to_resource``. This method should be called after any write operation on a collection.
 
-In the example above, the JSON reading and writing are managed by the ``JSONCollection``, which implements ``_load_from_resource`` and ``_save_to_resource``,  while the dictionary interface and recursive updating are handled by ``SyncedDict``.
+In the example above, the JSON reading and writing are managed by the ``JSONCollection``, which implements ``_load_from_resource`` and ``_save_to_resource``, while the dictionary interface and recursive updating are handled by ``SyncedDict``.
 In addition to the core ``SyncedCollection`` APIs shown above, ``SyncedDict`` implements the API of a `MutableMapping <https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping>`__ (all of which will leverage ``_save_to_resource`` and ``_load_from_resource`` under the hood).
 The benefit of this architecture is that once a particular data type is implemented, it may be reused for an arbitrary backend, and vice versa.
 
@@ -105,8 +105,8 @@ The buffering protocol is defined by the :class:`BufferedCollection`.
 This class defines the standard interface for classes that support buffering.
 This interface consists of the following:
 
-    - ``_load_from_buffer``: Loads data while in buffered mode and returns it in an object satisfying :meth:`synced_collections.SyncedCollection.is_base_type`. The default behavior is to simply call ``_load_from_resource``
-    - ``_save_to_buffer``: Stores data while in buffered mode. The default behavior is to simply call ``._save_to_resource``.
+    - ``_load_from_buffer``: Loads data while in buffered mode and returns it in an object satisfying :meth:`synced_collections.SyncedCollection.is_base_type`. The default behavior is to simply call the ``_load_from_resource`` method.
+    - ``_save_to_buffer``: Stores data while in buffered mode. The default behavior is to simply call the ``_save_to_resource`` method.
     - ``buffered``: A context manager within which all reads and writes to a collection are buffered.
     - ``buffer_backend``: A class-level context manager that may be used to buffer reads and writes for all instances of that class.
 

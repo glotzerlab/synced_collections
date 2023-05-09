@@ -17,14 +17,14 @@ With this backend, a standard Python data collection may be automatically synchr
     d["color"] = "blue"
 
     l = JSONList("list.json")
-    l = [10, "blue"]
+    l.extend([10, "blue"])
 
 This will create the following JSON files:
 
 .. code-block:: bash
 
     ~ $ cat dict.json
-    {'size': 10, 'color': 'blue'}
+    {"size": 10, "color": "blue"}
     ~ $ cat list.json
     [10, "blue"]
 

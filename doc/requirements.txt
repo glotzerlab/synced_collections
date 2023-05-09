@@ -1,4 +1,4 @@
 IPython
 jupyter_client
-sphinx>=4.0.0
+sphinx>=7.0.0
 sphinx_rtd_theme>=1.0.0
