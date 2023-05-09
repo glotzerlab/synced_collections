@@ -1,0 +1,36 @@
+synced_collections package documentation
+========================================
+
+.. note::
+
+    This is documentation for the **synced_collections** package, which is part of the signac_ framework.
+    See `here <signac-docs_>`_ for a comprehensive introduction to the **signac** *framework*.
+
+.. _signac: https://signac.io/
+.. _signac-docs: https://docs.signac.io/
+
+Contents
+--------
+
+.. toctree::
+   :hidden:
+
+   Go to Framework Documentation <https://docs.signac.io/>
+
+.. toctree::
+   :maxdepth: 2
+
+   installation
+   tutorial
+   library_design
+   api
+   changes
+   support
+
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
