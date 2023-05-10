@@ -1,0 +1,53 @@
+name: Publish to Github
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    env:
+      GENERATED_CHANGELOG: /tmp/generated_changelog.txt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Generate Changelog
+        run: |
+          python << EOF > ${{ env.GENERATED_CHANGELOG }}
+          import re
+
+          include  = False
+          lines = []
+
+          with open("${GITHUB_WORKSPACE}/changelog.txt") as f:
+              for line in f:
+                  if re.search("\[\d+\.\d+\.\d+\] -- \d{4}-\d{2}-\d{2}", line):
+                      if include:
+                          # We're now encountering the second header, so break
+                          break
+                      else:
+                          # First header, start including lines
+                          include = True
+                          lines.append(line)
+                  elif include:
+                      lines.append(line)
+
+          print(''.join(lines))
+          EOF
+      - name: Compute Tag
+        run: |
+          RELEASE_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
+          echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: ${{ env.GENERATED_CHANGELOG }}
+          tag_name: ${{ env.RELEASE_TAG }}
