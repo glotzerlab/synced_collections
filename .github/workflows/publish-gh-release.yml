@@ -11,6 +11,7 @@ jobs:
   release:
     env:
       ASSET_TARBALL: /tmp/synced_collections.tar.gz
+      GENERATED_CHANGELOG: /tmp/generated_changelog.txt
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +23,7 @@ jobs:
           tar -czf ${{ env.ASSET_TARBALL }} .
       - name: Generate Changelog
         run: |
-          python << EOF > ${GITHUB_WORKSPACE}/generated_changelog.txt
+          python << EOF > ${{ env.GENERATED_CHANGELOG }}
           import re
 
           include  = False
@@ -51,5 +52,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ env.ASSET_TARBALL }}
-          body_path: /tmp/generated_changelog.txt
+          body_path: ${{ env.GENERATED_CHANGELOG }}
           tag_name: ${{ env.RELEASE_TAG }}
