@@ -10,7 +10,7 @@ concurrency:
 jobs:
   release:
     env:
-      RELEASE_FILE_NAME: synced_collections.tar.gz
+      RELEASE_FILE_NAME: /tmp/synced_collections.tar.gz
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,8 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Create release assets
         run: |
-          cd /
-          tar -czf ${GITHUB_WORKSPACE}/${{ env.RELEASE_FILE_NAME }} ${GITHUB_WORKSPACE}/
+          tar -czf ${{ env.RELEASE_FILE_NAME }} .
       - name: Generate Changelog
         run: |
           python << EOF > ${GITHUB_WORKSPACE}/generated_changelog.txt
