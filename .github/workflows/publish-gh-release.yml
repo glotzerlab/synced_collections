@@ -31,7 +31,7 @@ jobs:
               for line in f:
                   if re.search("\[\d+\.\d+\.\d+\] -- \d{4}-\d{2}-\d{2}", line):
                       if include:
-                          # We're now encountering the second time, so break
+                          # We're now encountering the second header, so break
                           break
                       else:
                           # First header, start including lines
