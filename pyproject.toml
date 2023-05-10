@@ -7,7 +7,7 @@ requires = ["setuptools>=64.0.0"]
 
 [project]
 name = "synced_collections"
-version = "0.0.0"
+version = "1.0.0"
 description = "Interact with persistent key-value stores using Pythonic abstractions."
 readme = "README.md"
 # Supported versions are determined according to NEP 29.
