@@ -10,7 +10,7 @@ concurrency:
 jobs:
   release:
     env:
-      RELEASE_FILE_NAME: /tmp/synced_collections.tar.gz
+      ASSET_TARBALL: /tmp/synced_collections.tar.gz
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Create release assets
         run: |
-          tar -czf ${{ env.RELEASE_FILE_NAME }} .
+          tar -czf ${{ env.ASSET_TARBALL }} .
       - name: Generate Changelog
         run: |
           python << EOF > ${GITHUB_WORKSPACE}/generated_changelog.txt
@@ -43,9 +43,13 @@ jobs:
 
           print(''.join(lines))
           EOF
-
+      - name: Compute Tag
+        run: |
+          RELEASE_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
+          echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.RELEASE_FILE_NAME }}
+          files: ${{ env.ASSET_TARBALL }}
           body_path: ${GITHUB_WORKSPACE}/generated_changelog.txt
+          tag_name: ${{ env.RELEASE_TAG }}
