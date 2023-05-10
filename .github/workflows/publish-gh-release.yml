@@ -51,5 +51,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ env.ASSET_TARBALL }}
-          body_path: ${GITHUB_WORKSPACE}/generated_changelog.txt
+          body_path: /tmp/generated_changelog.txt
           tag_name: ${{ env.RELEASE_TAG }}
