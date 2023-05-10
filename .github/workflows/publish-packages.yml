@@ -6,11 +6,6 @@ on:
       upload_to_test:
         required: true
         type: boolean
-    secrets:
-      TEST_PYPI_API_TOKEN:
-        required: false
-      PYPI_API_TOKEN:
-        required: false
 
 jobs:
   build:
@@ -55,6 +50,8 @@ jobs:
   publish:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
@@ -66,9 +63,6 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository_url: https://test.pypi.org/legacy/
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
       - name: Publish package to PyPI
         if: ${{ !inputs.upload_to_test }}
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}

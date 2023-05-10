@@ -14,5 +14,3 @@ jobs:
     uses: ./.github/workflows/publish-packages.yml
     with:
       upload_to_test: false
-    secrets:
-      PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
