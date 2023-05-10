@@ -26,8 +26,8 @@ jobs:
           python << EOF > ${GITHUB_WORKSPACE}/generated_changelog.txt
           import re
 
-          include: Literal[False] = False
-          lines: list[Unknown] = []
+          include  = False
+          lines = []
 
           with open("${GITHUB_WORKSPACE}/changelog.txt") as f:
               for line in f:
@@ -37,7 +37,7 @@ jobs:
                           break
                       else:
                           # First header, start including lines
-                          include: Literal[True] = True
+                          include = True
                           lines.append(line)
                   elif include:
                       lines.append(line)
