@@ -19,7 +19,8 @@ jobs:
           fetch-depth: 0
       - name: Create release assets
         run: |
-          tar -czf ${{ env.RELEASE_FILE_NAME }} .
+          cd /
+          tar -czf ${GITHUB_WORKSPACE}/${{ env.RELEASE_FILE_NAME }} ${GITHUB_WORKSPACE}/
       - name: Generate Changelog
         run: |
           python << EOF > ${GITHUB_WORKSPACE}/generated_changelog.txt
