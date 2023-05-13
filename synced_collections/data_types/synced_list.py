@@ -53,8 +53,8 @@ class SyncedList(SyncedCollection, MutableSequence):
     are important distinctions to remember. In particular, because operations
     are reflected as changes to an underlying backend, copying (even deep
     copying) a :class:`SyncedList` instance may exhibit unexpected behavior. If
-    a true copy is required, you should use the `_to_base()` method to get a
-    :class:`list` representation, and if necessary construct a new
+    a true copy is required, you should use the :meth:`~.__call__` method to
+    get a :class:`list` representation, and if necessary construct a new
     :class:`SyncedList`.
 
     """

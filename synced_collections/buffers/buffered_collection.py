@@ -51,7 +51,7 @@ class BufferedCollection(SyncedCollection):
     **The default behavior of this class is not to buffer.** This class simply
     defines an appropriate interface for buffering behavior so that client code
     can rely on these methods existing, e.g. to be able to do things like ``with
-    collection.buffered...``. This feature allows client code to indicate to the
+    collection.buffered: ...``. This feature allows client code to indicate to the
     collection when it is safe to buffer reads and writes, which usually means
     guaranteeing that the synchronization destination (e.g. an underlying file
     or database entry) will not be modified by other processes concurrently

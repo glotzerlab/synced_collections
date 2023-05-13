@@ -1,4 +1,4 @@
-name: Publish to Github
+name: Publish to GitHub
 
 on:
   push:
@@ -21,31 +21,11 @@ jobs:
           fetch-depth: 0
       - name: Generate Changelog
         run: |
-          python << EOF > ${{ env.GENERATED_CHANGELOG }}
-          import re
-
-          include  = False
-          lines = []
-
-          with open("${GITHUB_WORKSPACE}/changelog.txt") as f:
-              for line in f:
-                  if re.search("\[\d+\.\d+\.\d+\] -- \d{4}-\d{2}-\d{2}", line):
-                      if include:
-                          # We're now encountering the second header, so break
-                          break
-                      else:
-                          # First header, start including lines
-                          include = True
-                          lines.append(line)
-                  elif include:
-                      lines.append(line)
-
-          print(''.join(lines))
-          EOF
+          python .github/workflows/generate-changelog.py > ${{ env.GENERATED_CHANGELOG }}
       - name: Compute Tag
         run: |
           RELEASE_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
-          echo "RELEASE_TAG=${RELEASE_TAG}" >> $GITHUB_ENV
+          echo "RELEASE_TAG=${RELEASE_TAG}" >> "$GITHUB_ENV"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:

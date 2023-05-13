@@ -153,7 +153,7 @@ class JSONCollection(SyncedCollection):
 
     Warnings
     --------
-    This class is _not_ thread safe on Windows. It relies on ``os.replace`` for
+    This class is *not* thread safe on Windows. It relies on ``os.replace`` for
     atomic file writes, and that method can fail in multithreaded situations if
     open handles exist to the destination file within the same process on a
     different thread. See https://bugs.python.org/issue46003 for more
@@ -343,7 +343,7 @@ class JSONList(JSONCollection, SyncedList):
         Ensure file consistency by writing changes back to a temporary file
         first, before replacing the original file (Default value = None).
     data : non-str :class:`collections.abc.Sequence`, optional
-        The initial data passed to :class:`JSONList `. If ``None``, defaults to
+        The initial data passed to :class:`JSONList`. If ``None``, defaults to
         ``[]`` (Default value = None).
     parent : JSONCollection, optional
         A parent instance of :class:`JSONCollection` or ``None``. If ``None``,

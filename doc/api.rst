@@ -13,6 +13,7 @@ Collection Types
 
 .. autoclass:: SyncedCollection
     :members:
+    :special-members: __call__
     :undoc-members:
     :show-inheritance:
 
