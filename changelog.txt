@@ -6,7 +6,7 @@ The **synced_collections** package follows `semantic versioning <https://semver.
 
 
 [1.0.0] -- 2023-05-10
----------------------
+=====================
 
 Added
 +++++
