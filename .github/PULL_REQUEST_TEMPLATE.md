@@ -11,6 +11,7 @@
 ## Checklist:
 <!-- This checklist must be complete before merging the pull request. -->
 <!-- If you are unsure about any of these items, do not hesitate to ask! -->
+- [ ] I am familiar with the [Contributing Guidelines](https://github.com/glotzerlab/synced_collections/blob/main/CONTRIBUTING.md).
 - [ ] I agree with the terms of the [Contributor Agreement](https://github.com/glotzerlab/synced_collections/blob/main/ContributorAgreement.md).
 - [ ] My name is on the [list of contributors](https://github.com/glotzerlab/synced_collections/blob/main/contributors.yaml).
 - [ ] The changes introduced by this pull request are covered by existing or newly introduced tests.
