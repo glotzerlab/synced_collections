@@ -1,4 +1,4 @@
 numpy==1.24.3
 pymongo==4.4.0; implementation_name=='cpython'
-redis==4.5.5
+redis==4.6.0
 zarr==2.15.0; platform_system!='Windows'
