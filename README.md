@@ -7,7 +7,7 @@
 [![Twitter](https://img.shields.io/twitter/follow/signacdata?style=social)](https://twitter.com/signacdata)
 [![GitHub Stars](https://img.shields.io/github/stars/glotzerlab/synced_collections?style=social)](https://github.com/glotzerlab/synced_collections/)
 [![PyPI](https://img.shields.io/pypi/v/synced_collections.svg)](https://pypi.org/project/synced_collections/)
-<!--[![conda-forge](https://img.shields.io/conda/vn/conda-forge/synced_collections.svg?style=flat)](https://anaconda.org/conda-forge/synced_collections)-->
+[![conda-forge](https://img.shields.io/conda/vn/conda-forge/synced_collections.svg?style=flat)](https://anaconda.org/conda-forge/synced_collections)
 [![RTD](https://img.shields.io/readthedocs/synced_collections.svg?style=flat)](https://docs.signac.io)
 [![PyPI-downloads](https://img.shields.io/pypi/dm/synced_collections.svg?style=flat)](https://pypistats.org/packages/synced_collections)
 
@@ -30,8 +30,14 @@ For instance, users wishing to access a JSON file on disk like a dictionary and 
 
 ## Installation
 
-The recommended installation method for **synced_collections** is through **pip**.
+The recommended installation method for **synced_collections** is through **conda** or **pip**.
 The software is tested for Python 3.8+ and is built for all major platforms.
+
+To install **synced_collections** *via* the [conda-forge](https://conda-forge.github.io/) channel, execute:
+
+```bash
+conda install -c conda-forge synced_collections
+```
 
 To install **synced_collections** *via* **pip**, execute:
 
