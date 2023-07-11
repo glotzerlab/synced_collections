@@ -33,7 +33,7 @@ For instance, users wishing to access a JSON file on disk like a dictionary and 
 The recommended installation method for **synced_collections** is through **conda** or **pip**.
 The software is tested for Python 3.8+ and is built for all major platforms.
 
-To install **synced_collections** *via* the [conda-forge](https://conda-forge.github.io/) channel, execute:
+To install **synced_collections** *via* the [conda-forge](https://conda-forge.org/) channel, execute:
 
 ```bash
 conda install -c conda-forge synced_collections
