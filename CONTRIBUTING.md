@@ -38,7 +38,7 @@ Please see [our contributions guide](https://docs.signac.io/en/latest/community.
 * Write API documentation in this package, along with any guides or concept overviews that are specific to synced_collections. Any information relevant to how synced_collections interact with the rest of the framework should go in the [framework documentation](https://docs.signac.io/) ([source](https://github.com/glotzerlab/signac-docs/)).
 * Use inclusive language in all documentation and code. The [Google developer documentation style guide](https://developers.google.com/style/inclusive-documentation) is a helpful reference.
 
-Please see the [Support](https://docs.signac.io/projects/signac-core/en/latest/support.html) section as part of the documentation for detailed development guidelines.
+Please see the [Support](https://docs.signac.io/projects/core/en/latest/support.html) section as part of the documentation for detailed development guidelines.
 
 ### Code Style
 
