@@ -1,4 +1,4 @@
 numpy==1.26.4
 pymongo==4.6.2; implementation_name=='cpython'
 redis==5.0.2
-zarr==2.17.0; platform_system!='Windows'
+zarr==2.17.1; platform_system!='Windows'
