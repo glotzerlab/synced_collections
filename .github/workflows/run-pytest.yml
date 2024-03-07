@@ -29,9 +29,9 @@ jobs:
                   {python: '3.11', dependencies: 'minimal'},
                   {python: '3.8', dependencies: 'oldest'} ]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.config.python }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.config.python }}
     - name: Install newest dependencies
@@ -55,14 +55,14 @@ jobs:
       run: |
         pip install -e .
     - name: Run MongoDB
-      uses: supercharge/mongodb-github-action@1.9.0
+      uses: supercharge/mongodb-github-action@1.10.0
       if: ${{ matrix.os == 'ubuntu-latest' && matrix.config.dependencies != 'minimal' }}
     - name: Run Redis
-      uses: supercharge/redis-github-action@1.5.0
+      uses: supercharge/redis-github-action@1.8.0
       if: ${{ matrix.os == 'ubuntu-latest' && matrix.config.dependencies != 'minimal' }}
     - name: Test with pytest
       run: |
         pytest -rs --cov=synced_collections --cov-config=pyproject.toml --cov-report=xml tests/ -v
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
