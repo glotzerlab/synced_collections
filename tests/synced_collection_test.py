@@ -531,9 +531,7 @@ class SyncedDictTest(SyncedCollectionTest):
         )
 
         if has_corresponding_python_type:
-            with pytest.raises((ValueError, TypeError)), pytest.warns(
-                NumpyConversionWarning
-            ):
+            with pytest.raises((ValueError, TypeError)):
                 synced_collection["numpy_dtype_val"] = value
         else:
             with pytest.warns(NumpyConversionWarning):
@@ -553,9 +551,7 @@ class SyncedDictTest(SyncedCollectionTest):
         # not a priority to test here).
         value = dtype(random_sample(shape))
 
-        with pytest.raises((ValueError, TypeError)), pytest.warns(
-            NumpyConversionWarning
-        ):
+        with pytest.raises((ValueError, TypeError)):
             synced_collection["numpy_dtype_val"] = value
 
 
@@ -814,9 +810,7 @@ class SyncedListTest(SyncedCollectionTest):
         should_fail = isinstance(test_value, (numpy.number, numpy.bool_))
 
         if should_fail:
-            with pytest.raises((ValueError, TypeError)), pytest.warns(
-                NumpyConversionWarning
-            ):
+            with pytest.raises((ValueError, TypeError)):
                 synced_collection.append(value)
         else:
             with pytest.warns(NumpyConversionWarning):
@@ -840,14 +834,10 @@ class SyncedListTest(SyncedCollectionTest):
         # not a priority to test here).
         value = dtype(random_sample(shape))
 
-        with pytest.raises((ValueError, TypeError)), pytest.warns(
-            NumpyConversionWarning
-        ):
+        with pytest.raises((ValueError, TypeError)):
             synced_collection.append(value)
 
-        with pytest.raises((ValueError, TypeError)), pytest.warns(
-            NumpyConversionWarning
-        ):
+        with pytest.raises((ValueError, TypeError)):
             synced_collection[-1] = value
 
     @pytest.mark.parametrize("dtype", NUMPY_INT_TYPES)
