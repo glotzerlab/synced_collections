@@ -3,12 +3,14 @@
 # This software is licensed under the BSD 3-Clause License.
 import platform
 from collections.abc import MutableMapping, MutableSequence
+from contextlib import nullcontext
 from copy import deepcopy
 from typing import Any, Tuple, Type
 
 import pytest
 
 from synced_collections import SyncedCollection
+from synced_collections.backends.collection_zarr import ZarrCollection
 from synced_collections.errors import KeyTypeError
 from synced_collections.numpy_utils import NumpyConversionWarning
 
@@ -526,13 +528,16 @@ class SyncedDictTest(SyncedCollectionTest):
         # should fail to set correctly.
         raw_value = value.item() if shape is None else value.tolist()
         test_value = value.item(0) if isinstance(raw_value, list) else raw_value
-        has_corresponding_python_type = isinstance(
-            test_value, (numpy.number, numpy.bool_)
-        )
+        should_fail = isinstance(test_value, (numpy.number, numpy.bool_))
 
-        if has_corresponding_python_type:
+        maybe_warn = nullcontext()
+        if isinstance(synced_collection, ZarrCollection):
+            maybe_warn = pytest.warns(NumpyConversionWarning)
+
+        if should_fail:
             with pytest.raises((ValueError, TypeError)):
-                synced_collection["numpy_dtype_val"] = value
+                with maybe_warn:
+                    synced_collection["numpy_dtype_val"] = value
         else:
             with pytest.warns(NumpyConversionWarning):
                 synced_collection["numpy_dtype_val"] = value
@@ -551,8 +556,13 @@ class SyncedDictTest(SyncedCollectionTest):
         # not a priority to test here).
         value = dtype(random_sample(shape))
 
+        maybe_warn = nullcontext()
+        if isinstance(synced_collection, ZarrCollection):
+            maybe_warn = pytest.warns(NumpyConversionWarning)
+
         with pytest.raises((ValueError, TypeError)):
-            synced_collection["numpy_dtype_val"] = value
+            with maybe_warn:
+                synced_collection["numpy_dtype_val"] = value
 
 
 class SyncedListTest(SyncedCollectionTest):
@@ -809,9 +819,14 @@ class SyncedListTest(SyncedCollectionTest):
         test_value = value.item(0) if isinstance(raw_value, list) else raw_value
         should_fail = isinstance(test_value, (numpy.number, numpy.bool_))
 
+        maybe_warn = nullcontext()
+        if isinstance(synced_collection, ZarrCollection):
+            maybe_warn = pytest.warns(NumpyConversionWarning)
+
         if should_fail:
             with pytest.raises((ValueError, TypeError)):
-                synced_collection.append(value)
+                with maybe_warn:
+                    synced_collection.append(value)
         else:
             with pytest.warns(NumpyConversionWarning):
                 synced_collection.append(value)
@@ -834,8 +849,13 @@ class SyncedListTest(SyncedCollectionTest):
         # not a priority to test here).
         value = dtype(random_sample(shape))
 
+        maybe_warn = nullcontext()
+        if isinstance(synced_collection, ZarrCollection):
+            maybe_warn = pytest.warns(NumpyConversionWarning)
+
         with pytest.raises((ValueError, TypeError)):
-            synced_collection.append(value)
+            with maybe_warn:
+                synced_collection.append(value)
 
         with pytest.raises((ValueError, TypeError)):
             synced_collection[-1] = value
