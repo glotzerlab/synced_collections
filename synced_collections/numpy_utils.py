@@ -91,4 +91,4 @@ def _is_complex(data):
     bool
         Whether or not the input is a complex number.
     """
-    return NUMPY and numpy.iscomplexobj(data)
+    return (NUMPY and numpy.iscomplexobj(data)) or isinstance(data, complex)
