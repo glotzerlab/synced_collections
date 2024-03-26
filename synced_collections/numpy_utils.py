@@ -84,11 +84,11 @@ def _is_numpy_scalar(data):
 def _is_complex(data):
     """Check if an object is complex.
 
-    This function works for both numpy raw Python data types.
+    This function works for numpy arrays, scalars, and raw Python data types.
 
     Returns
     -------
     bool
         Whether or not the input is a complex number.
     """
-    return (NUMPY and numpy.iscomplex(data).any()) or (isinstance(data, complex))
+    return (NUMPY and numpy.iscomplexobj(data)) or isinstance(data, complex)
