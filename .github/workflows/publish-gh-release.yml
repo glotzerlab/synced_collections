@@ -27,7 +27,7 @@ jobs:
           RELEASE_TAG=$(git describe --tags --abbrev=0 || echo "v0.0.0")
           echo "RELEASE_TAG=${RELEASE_TAG}" >> "$GITHUB_ENV"
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           body_path: ${{ env.GENERATED_CHANGELOG }}
           tag_name: ${{ env.RELEASE_TAG }}
