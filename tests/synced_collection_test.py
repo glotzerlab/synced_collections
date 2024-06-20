@@ -53,7 +53,7 @@ try:
         numpy.longdouble,
         numpy.float32,
         numpy.float64,
-        numpy.float_,
+        numpy.float64,
     )
 
     NUMPY_COMPLEX_TYPES: Tuple[Type, ...] = (
@@ -62,7 +62,7 @@ try:
         numpy.clongdouble,
         numpy.complex64,
         numpy.complex128,
-        numpy.complex_,
+        numpy.complex128,
     )
     NUMPY_SHAPES: Tuple[Any, ...] = (None, (1,), (2,), (2, 2))
 
