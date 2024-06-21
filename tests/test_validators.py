@@ -79,12 +79,12 @@ class TestJSONFormatValidator:
     def test_numpy_data(self):
         data = numpy.random.rand(3, 4)
         json_format_validator(data)
-        json_format_validator(numpy.float_(3.14))
+        json_format_validator(numpy.float64(3.14))
         # numpy data as dict value
         json_format_validator({"test": data})
-        json_format_validator({"test": numpy.float_(1.0)})
+        json_format_validator({"test": numpy.float64(1.0)})
         # numpy data in list
-        json_format_validator([data, numpy.float_(1.0), 1, "test"])
+        json_format_validator([data, numpy.float64(1.0), 1, "test"])
 
     def test_invalid_data(self):
         class A:
