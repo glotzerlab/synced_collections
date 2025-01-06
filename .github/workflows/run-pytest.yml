@@ -63,6 +63,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -rs --cov=synced_collections --cov-config=pyproject.toml --cov-report=xml tests/ -v
-    - uses: codecov/codecov-action@v4
+    - uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
