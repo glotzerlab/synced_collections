@@ -7,8 +7,8 @@ Please use the [GitHub issue tracker](https://github.com/glotzerlab/synced_colle
 
 ## Writing Documentation
 
-A general introduction in the form of tutorials, guides, and recipes is published as part of the framework documentation at [https://docs.signac.io](https://docs.signac.io).
-The API of each package as part of the framework is documented in the form of docstrings, which are published on `https://docs.signac.io/projects/$package`, where `$package` is currently one of `core`, `flow`, `dashboard`, or `synced_collections`.
+A general introduction in the form of tutorials, guides, and recipes is published as part of the framework documentation at [https://signac.readthedocs.io](https://signac.readthedocs.io).
+The API of each package as part of the framework is documented in the form of docstrings, which are published on `https://signac.readthedocs.io/projects/$package`, where `$package` is currently one of `core`, `flow`, `dashboard`, or `synced_collections`.
 
 Anyone is invited to add to or edit any part of the documentation.
 To fix a spelling mistake or make minor edits, click on the **Edit on GitHub** button in the top-right corner.
@@ -26,7 +26,7 @@ All contributors must agree to the Contributor Agreement ([ContributorAgreement.
 
 ### Guideline for Code Contributions
 
-Please see [our contributions guide](https://docs.signac.io/en/latest/community.html#contributions) for detailed development guidelines.
+Please see [our contributions guide](https://signac.readthedocs.io/en/latest/community.html#contributions) for detailed development guidelines.
 * Use the [OneFlow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow) model of development:
   - Both new features and bug fixes should be developed in branches based on `main`.
   - Hotfixes (critical bugs that need to be released *fast*) should be developed in a branch based on the latest tagged release.
@@ -35,10 +35,10 @@ Please see [our contributions guide](https://docs.signac.io/en/latest/community.
 * Create [unit tests](https://en.wikipedia.org/wiki/Unit_testing) and [integration tests](https://en.wikipedia.org/wiki/Integration_testing) that cover the common cases and the corner cases of the code.
 * Preserve backwards-compatibility whenever possible, and make clear if something must change.
 * Document any portions of the code that might be less clear to others, especially to new developers.
-* Write API documentation in this package, along with any guides or concept overviews that are specific to synced_collections. Any information relevant to how synced_collections interact with the rest of the framework should go in the [framework documentation](https://docs.signac.io/) ([source](https://github.com/glotzerlab/signac-docs/)).
+* Write API documentation in this package, along with any guides or concept overviews that are specific to synced_collections. Any information relevant to how synced_collections interact with the rest of the framework should go in the [framework documentation](https://signac.readthedocs.io/) ([source](https://github.com/glotzerlab/signac-docs/)).
 * Use inclusive language in all documentation and code. The [Google developer documentation style guide](https://developers.google.com/style/inclusive-documentation) is a helpful reference.
 
-Please see the [Support](https://docs.signac.io/projects/core/en/latest/support.html) section as part of the documentation for detailed development guidelines.
+Please see the [Support](https://signac.readthedocs.io/projects/core/en/latest/support.html) section as part of the documentation for detailed development guidelines.
 
 ### Code Style
 
