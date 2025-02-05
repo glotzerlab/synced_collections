@@ -11,7 +11,7 @@ Fixed
 +++++
 
 - Tests run with numpy 2.0.
-- Typo in ``pyproject.toml``.
+- Use ``tool.setuptools`` key in ``pyproject.toml``.
 
 [1.0.0] -- 2023-05-17
 =====================
