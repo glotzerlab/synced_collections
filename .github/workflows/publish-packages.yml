@@ -16,14 +16,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
-    - name: Install dependencies
-      run: |
-        # We must explicitly install the requirements so that we can force
-        # installation of the local wheel below in case the version conflicts
-        # with published wheels (typically only possible during testing).
-        python -m pip install \
-        -r requirements/requirements-test.txt
+        python-version: "3.14"
+    - name: Set up Python environment
+      uses: glotzerlab/workflows/setup-uv@204dc7c0f82720090703712694b7cab761aacaa0 # 0.13.0
+      with:
+        lockfile: "requirements/requirements-test.txt"
     - name: Install pypa/build
       run:
         python -m pip install build
