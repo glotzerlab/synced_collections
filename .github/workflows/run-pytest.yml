@@ -37,12 +37,6 @@ jobs:
     - name: Install the package
       run: |
         pip install -e .
-    - name: Run MongoDB
-      uses: supercharge/mongodb-github-action@1.12.0
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-    - name: Run Redis
-      uses: supercharge/redis-github-action@1.8.0
-      if: ${{ matrix.os == 'ubuntu-latest' }}
     - name: Test with pytest
       run: |
         pytest -rs tests/ -v

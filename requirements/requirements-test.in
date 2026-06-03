@@ -3,6 +3,3 @@ pytest
 pytest-cov
 pytest-xdist
 numpy
-pymongo; implementation_name=='cpython'
-redis
-zarr; platform_system!='Windows'
