@@ -37,7 +37,6 @@ jobs:
     - name: Install newest dependencies
       run: |
         pip install -r requirements/requirements-test.txt
-        pip install -r requirements/requirements-test-optional.txt
       if: ${{ matrix.config.dependencies == 'newest' }}
     - name: Install minimal dependencies
       run: |

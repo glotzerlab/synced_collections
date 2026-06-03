@@ -23,8 +23,7 @@ jobs:
         # installation of the local wheel below in case the version conflicts
         # with published wheels (typically only possible during testing).
         python -m pip install \
-        -r requirements/requirements-test.txt \
-        -r requirements/requirements-test-optional.txt
+        -r requirements/requirements-test.txt
     - name: Install pypa/build
       run:
         python -m pip install build
