@@ -33,7 +33,7 @@ jobs:
     - name: Run MongoDB
       uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
     - name: Run Redis
-      uses: supercharge/redis-github-action@ea9b21c6ecece47bd99595c532e481390ea0f044 # 1.8.0
+      uses: supercharge/redis-github-action@bc274cb7238cd63a45029db04ee48c07a72609fd # 1.8.1
     - name: Test with pytest
       run:
         python -m pytest -v tests/
