@@ -31,7 +31,7 @@ jobs:
       run:
         python -m pip install synced_collections --progress-bar off --no-index -f dist/
     - name: Run MongoDB
-      uses: supercharge/mongodb-github-action@90004df786821b6308fb02299e5835d0dae05d0d # 1.12.0
+      uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
     - name: Run Redis
       uses: supercharge/redis-github-action@ea9b21c6ecece47bd99595c532e481390ea0f044 # 1.8.0
     - name: Test with pytest
