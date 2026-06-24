@@ -6,7 +6,7 @@ asttokens==3.0.1
     # via stack-data
 babel==2.18.0
     # via sphinx
-certifi==2026.5.20
+certifi==2026.6.17
     # via requests
 charset-normalizer==3.4.7
     # via requests
@@ -22,7 +22,7 @@ idna==3.18
     # via requests
 imagesize==2.0.0
     # via sphinx
-ipython==9.14.0
+ipython==9.14.1
     # via -r doc/requirements.in
 ipython-pygments-lexers==1.1.1
     # via ipython
@@ -30,7 +30,7 @@ jedi==0.20.0
     # via ipython
 jinja2==3.1.6
     # via sphinx
-jupyter-client==8.8.0
+jupyter-client==8.9.1
     # via -r doc/requirements.in
 jupyter-core==5.9.1
     # via jupyter-client
@@ -94,7 +94,7 @@ sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
 stack-data==0.6.3
     # via ipython
-tornado==6.5.6
+tornado==6.5.7
     # via jupyter-client
 traitlets==5.15.1
     # via
@@ -102,7 +102,9 @@ traitlets==5.15.1
     #   jupyter-client
     #   jupyter-core
     #   matplotlib-inline
+typing-extensions==4.15.0
+    # via jupyter-client
 urllib3==2.7.0
     # via requests
-wcwidth==0.7.0
+wcwidth==0.8.1
     # via prompt-toolkit
