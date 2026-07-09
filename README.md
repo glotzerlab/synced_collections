@@ -3,13 +3,9 @@
 [![Affiliated with NumFOCUS](https://img.shields.io/badge/NumFOCUS-affiliated%20project-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org/sponsored-projects/affiliated-projects)
 [![GitHub Actions](https://github.com/glotzerlab/synced_collections/actions/workflows/run-pytest.yml/badge.svg)](https://github.com/glotzerlab/synced_collections/actions)
 [![License](https://img.shields.io/github/license/glotzerlab/synced_collections.svg)](https://github.com/glotzerlab/synced_collections/blob/main/LICENSE.txt)
-[![Slack](https://img.shields.io/badge/Slack-chat%20support-brightgreen.svg?style=flat&logo=slack)](https://signac.readthedocs.io/slack-invite/)
-[![Twitter](https://img.shields.io/twitter/follow/signacdata?style=social)](https://twitter.com/signacdata)
 [![GitHub Stars](https://img.shields.io/github/stars/glotzerlab/synced_collections?style=social)](https://github.com/glotzerlab/synced_collections/)
 [![PyPI](https://img.shields.io/pypi/v/synced_collections.svg)](https://pypi.org/project/synced_collections/)
 [![conda-forge](https://img.shields.io/conda/vn/conda-forge/synced_collections.svg?style=flat)](https://anaconda.org/conda-forge/synced_collections)
-[![RTD](https://img.shields.io/readthedocs/synced_collections.svg?style=flat)](https://signac.readthedocs.io)
-[![PyPI-downloads](https://img.shields.io/pypi/dm/synced_collections.svg?style=flat)](https://pypistats.org/packages/synced_collections)
 
 The [**signac** framework](https://signac.readthedocs.io) helps users manage and scale file-based workflows, facilitating data reuse, sharing, and reproducibility.
 
@@ -19,10 +15,6 @@ For instance, users wishing to access a JSON file on disk like a dictionary and 
 
 ## Resources
 
-- [Slack Chat Support](https://signac.readthedocs.io/slack-invite/):
-  Get help and ask questions on the **signac** Slack workspace.
-- [**signac** website](https://signac.readthedocs.io/):
-  Framework overview and news.
 - [Framework documentation](https://signac.readthedocs.io/):
   Examples, tutorials, topic guides, and package Python APIs.
 - [Package documentation](https://signac.readthedocs.io/projects/synced-collections/):

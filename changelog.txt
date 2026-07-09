@@ -4,7 +4,7 @@ Changelog
 
 The **synced_collections** package follows `semantic versioning <https://semver.org/>`_.
 
-[1.0.1] -- 2025-xx-xx
+[1.0.1] -- 2026-07-09
 ---------------------
 
 Fixed
@@ -12,6 +12,7 @@ Fixed
 
 - Tests run with numpy 2.0.
 - Use ``tool.setuptools`` key in ``pyproject.toml``.
+- Update website links.
 
 [1.0.0] -- 2023-05-17
 =====================
