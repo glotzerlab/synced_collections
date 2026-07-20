@@ -2,13 +2,13 @@
 #    uv pip compile doc/requirements.in --output-file=doc/requirements.txt
 alabaster==1.0.0
     # via sphinx
-asttokens==3.0.1
+asttokens==3.0.2
     # via stack-data
 babel==2.18.0
     # via sphinx
 certifi==2026.6.17
     # via requests
-charset-normalizer==3.4.7
+charset-normalizer==3.4.9
     # via requests
 decorator==5.3.1
     # via ipython
@@ -22,7 +22,7 @@ idna==3.18
     # via requests
 imagesize==2.0.0
     # via sphinx
-ipython==9.14.1
+ipython==9.15.0
     # via -r doc/requirements.in
 ipython-pygments-lexers==1.1.1
     # via ipython
@@ -44,7 +44,7 @@ parso==0.8.7
     # via jedi
 pexpect==4.9.0
     # via ipython
-platformdirs==4.10.0
+platformdirs==4.10.1
     # via jupyter-core
 prompt-toolkit==3.0.52
     # via ipython
@@ -102,9 +102,9 @@ traitlets==5.15.1
     #   jupyter-client
     #   jupyter-core
     #   matplotlib-inline
-typing-extensions==4.15.0
+typing-extensions==4.16.0
     # via jupyter-client
 urllib3==2.7.0
     # via requests
-wcwidth==0.8.1
+wcwidth==0.8.2
     # via prompt-toolkit
