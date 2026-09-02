@@ -94,7 +94,7 @@ sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
 stack-data==0.6.3
     # via ipython
-tornado==6.5.7
+tornado==6.5.8
     # via jupyter-client
 traitlets==5.15.1
     # via
