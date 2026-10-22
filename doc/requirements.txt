@@ -57,7 +57,7 @@ pygments==2.21.0
     #   ipython
     #   ipython-pygments-lexers
     #   sphinx
-python-dateutil==2.9.0.post0
+python-dateutil==3.0.0
     # via jupyter-client
 pyzmq==27.2.0
     # via jupyter-client
@@ -102,6 +102,8 @@ traitlets==5.16.1
     #   matplotlib-inline
 typing-extensions==4.16.0
     # via jupyter-client
+tzdata==2026.5
+    # via python-dateutil
 urllib3==2.8.0
     # via requests
 wcwidth==0.9.3
